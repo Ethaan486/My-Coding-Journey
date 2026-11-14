@@ -1,0 +1,25 @@
+”拆数字（基础必学）“
+从1数到n，计算其中“x“这个数字出现了多少次（例：11中”1“出现了两次）
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n,x;
+    cin>>n>>x;
+    int A=0;
+    for(int i=1;i<=n;i++)
+    {
+        int t=i;
+        while(t>0)
+        {
+            int T=t%10;
+            if(T==x)
+            {
+                A++;
+            }
+            t=t/10;
+        }
+}
+    cout<<A<<endl;
+    return 0;
+}
