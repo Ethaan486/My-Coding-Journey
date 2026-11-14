@@ -1,0 +1,50 @@
+约瑟夫环，重点：环形运动（lun=(lun+1)%n;）
+补充：. 结合上一道题来解释
+
+在约瑟夫环那道题里：
+
+· 这 105 个格子，就代表** 105 个座位**。
+· 每个座位上都有一个牌子，写着 0。
+· a[i] == 0 就代表：“坐在 i 号座位上的兄弟还在队伍里，还没被淘汰。”
+· 当有人报到 m 准备出圈时，你就把那个人座位上的牌子改成 a[i] = 1，代表：“这个人出圈了，后面再轮到他，直接无视跳过
+后补对这道题的逐步分析
+
+
+
+
+输入样例           输出样例
+5 1 2             3
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k,m;
+    cin>>n>>k>>m;
+    int a[105]={0};
+    int lun=k;
+    int baoshu=1;
+    int chuquan=0;
+    while(chuquan<n-1)
+    {
+        if(a[lun]==0)
+        {
+            if(baoshu==m)
+            {
+                a[lun]=1;
+                chuquan++;
+                baoshu=1;
+            }
+            else{baoshu++;}
+        }
+        lun=(lun+1)%n;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]==0)
+        {
+            cout<<i<<endl;
+            break;
+        }
+    }
+    return 0;
+}
