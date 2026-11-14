@@ -1,0 +1,42 @@
+多个数计算极差和方差（含数组；其中一个答案保留三位小数。）
+输入样例                   输出样例
+2                          4 2.000
+890 86075.959
+5
+5 4 3 2 1
+7
+333 494 655 991 101 591 941
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int N;
+    cin>>N;
+    while(N--)
+    {
+        int n;
+        cin>>n;
+        int a[100005];
+        long long mmax=-10000000000000000;
+        long long mmin=100000000000000;
+        long long z=0;
+        for(int i=0;i<n;i++)
+        {
+         cin>>a[i];
+            if(a[i]>mmax){mmax=a[i];}
+            if(a[i]<mmin){mmin=a[i];}
+            z+=a[i];
+        }
+        long long j=mmax-mmin;
+        double p=(double)z/n;
+        double f=0;
+        for(int i=0;i<n;i++)
+        {
+            double c=a[i]-p;
+            f+=c*c;
+        }
+        f/=n;
+        cout<<j<<" "<<fixed<<setprecision(3)<<f<<endl;
+    }
+    return 0;
+}
