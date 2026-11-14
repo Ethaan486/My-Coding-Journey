@@ -1,0 +1,26 @@
+关于数组下标
+给你一个1 -> n的排列，现在有一次机会可以交换两个数的位置，求交换后最小值和最大值之间的最大距离是多少？
+输入样例             输出样例
+5                    3
+4 5 1 3 2
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,a[105];
+    cin>>n;
+    int m_min=1,m_max=1;
+    for(int i=1;i<n;i++)
+    {
+        cin>>a[i];
+        if(a[i]<a[m_min]){m_min=i;}
+        if(a[i]>a[m_max]){m_max=i;}
+    }
+    int d1=abs(n-m_max);
+    int d2=abs(m_max-1);
+    int d3=abs(n-m_min);
+    int d4=abs(m_min-1);
+    int d=max({d1,d2,d3,d4});
+    cout<<d<<endl;
+    return 0;
+}
