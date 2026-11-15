@@ -1,0 +1,33 @@
+素数分布
+先定义有T个数，然后分别输入t，分别输出1-t之间有多少素数；（没用bool函数）
+重点：多层循环。
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+ int T;
+    cin>>T;
+    for(int i=0;i<T;i++)
+    {   int z=0;
+        int t;
+        cin>>t;
+        for(int i=2;i<=t;i++)
+        {   
+            int shu=1;
+            for(int j=2;j<i;j++)
+            {   
+                if(i%j==0)
+                {
+                    shu=0;
+                    break;
+                }
+            }
+            if(shu==1)
+            {
+                z++;
+            }
+        }
+     cout<<z<<endl;
+    }
+    return 0;
+}
