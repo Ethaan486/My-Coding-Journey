@@ -1,0 +1,29 @@
+洛西函数
+宇宙集团对QIT的课程做了一个满意度调查，一共在校园内抽取了N个同学，对本学期的M种课程进行满意度调查。宇宙集团的小Y想知道，有多少门课是被所有调查到的同学都喜欢的。
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int N,M;
+    cin>>N>>M;
+    int a[1005]={0};
+    for(int i=0;i<N;i++)
+    {
+        int A;
+        cin>>A;
+        for(int j=0;j<A;j++)
+        {
+            int b;
+            cin>>b;
+            a[b]++;
+        }
+    }
+    int z=0;
+    for(int i=1;i<=M;i++)
+    {
+        if(a[i]==N)
+            z++;
+    }
+    cout<<z<<endl;
+    return 0;
+}
