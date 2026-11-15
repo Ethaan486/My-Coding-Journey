@@ -1,0 +1,28 @@
+判断矩阵中沿对角线的下面的所有数是否都为0
+用到了布尔函数(bool   true   false)
+重点：学习此题目中对对角线下的每一个数的判断方法。
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    long long a[15][15];
+    bool yes=true;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            cin>>a[i][j];
+            if(i>j&&a[i][j]!=0)
+            {
+                yes=false;
+            }
+        }
+    }
+    if(yes)
+    {cout<<"YES"<<endl;}
+    else
+    {cout<<"NO"<<endl;}
+    return 0;
+}
