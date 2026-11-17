@@ -1,0 +1,28 @@
+给你一个n*n矩阵，按照顺序填入1到n*n的数，现在让你连接相邻两条边的中点，然后只保留他们围成封闭图形区域的数字，那么这个矩阵变为
+等差数列；首项与尾项。
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int T;
+    cin>>T;
+    while(T--)
+    {   long long A=0;
+        int t;
+        cin>>t;
+        long long zj=t/2;
+        for(int i=0;i<t;i++)
+        {   
+            long long jl=abs(i-zj);
+            long long ks=jl;
+            long long zh=t-1-jl;
+            long long kds=i*t+ks+1;
+            long long zdh=i*t+zh+1;
+            long long shu=zh-ks+1;
+            long long hA=(kds+zdh)*shu/2;
+            A+=hA;
+        }
+     cout<<A<<endl;
+    }
+    return 0;
+}
