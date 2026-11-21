@@ -1,0 +1,14 @@
+直接输入字符串，然后对字符串进行反转，输出反转后的字符串；
+有点用
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	string A;
+cin>>A;
+reverse(A.begin(),A.end());
+cout<<A<<endl;
+return 0;
+}
